@@ -256,5 +256,39 @@
       </div>
     </div>
   </footer>
+  <!-- Script to detect Google Translate language changes and apply RTL dynamically -->
+  <script>
+    // List of language codes that use RTL direction
+    var rtlLangs = ['ar', 'he', 'fa', 'ur'];
+
+    // Function to update the dir attribute based on the current language
+    function updateDirByLang() {
+      var html = document.documentElement;
+      // Get the language code (first two letters)
+      var lang = (html.getAttribute('lang') || '').slice(0,2).toLowerCase();
+      // Set direction to RTL if the language is in the RTL list, otherwise LTR
+      if (rtlLangs.includes(lang)) {
+        html.setAttribute('dir', 'rtl');
+      } else {
+        html.setAttribute('dir', 'ltr');
+      }
+    }
+
+    // Run on page load
+    updateDirByLang();
+
+    // Observe changes to the lang attribute on <html>
+    var observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.attributeName === 'lang') {
+          updateDirByLang();
+        }
+      });
+    });
+    observer.observe(document.documentElement, { attributes: true });
+
+    // Also check periodically in case Google Translate changes lang in a way MutationObserver misses
+    setInterval(updateDirByLang, 1000);
+  </script>
 </body>
 </html>
