@@ -198,6 +198,42 @@ h1 {
   transform: scale(1.03);
 }
 
+/* Custom background for the 3-column section to improve readability */
+.three-column-section {
+  background: #d0e2f7; /* Slightly darker blue for contrast */
+  border-radius: 12px;  /* Rounded corners for a softer look */
+  padding: 32px 18px;   /* Add padding inside the section */
+  margin-bottom: 32px;  /* Space below the section */
+}
+
+/* Style for the icons in the column headings */
+.three-column-section h2 i {
+  color: #0071c5;      /* Intel blue for icons */
+  margin-right: 8px;   /* Space between icon and text */
+  font-size: 1.4em;    /* Make icons a bit larger */
+  vertical-align: middle;
+}
+
+/* Style for the "Learn More" links */
+.learn-more-link {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 7px 18px;
+  background-color: #0071c5; /* Intel blue */
+  color: #fff;               /* White text */
+  border-radius: 4px;
+  text-decoration: none;     /* Remove underline */
+  font-weight: bold;
+  transition: background 0.2s;
+}
+
+.learn-more-link:hover,
+.learn-more-link:focus {
+  background-color: #005999; /* Darker blue on hover */
+  color: #fff;
+  text-decoration: none;
+}
+
 /* Responsive design: stack cards vertically on small screens */
 @media (max-width: 1400px) {
   .timeline {
