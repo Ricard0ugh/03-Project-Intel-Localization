@@ -29,6 +29,10 @@
       </p>
       <!-- Intel blue accent line for branding -->
       <div style="height:4px; width:80px; background:#0071c5; margin:18px auto 0 auto; border-radius:2px;"></div>
+      <!-- Welcome Modal Trigger Button -->
+      <button type="button" class="btn btn-outline-light mt-2" data-bs-toggle="modal" data-bs-target="#welcomeModal">
+        Welcome Message
+      </button>
     </div>
   </header>
 
@@ -256,6 +260,24 @@
       </div>
     </div>
   </footer>
+  <!-- Bootstrap Modal Component -->
+  <div class="modal fade" id="welcomeModal" tabindex="-1" aria-labelledby="welcomeModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="welcomeModalLabel">Welcome to Intel Sustainability</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Explore Intel's journey through innovation and sustainability. Use the timeline below to discover key milestones and learn how Intel is shaping a better future for technology and our planet!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Get Started</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- Script to detect Google Translate language changes and apply RTL dynamically -->
   <script>
     // List of language codes that use RTL direction
@@ -290,5 +312,7 @@
     // Also check periodically in case Google Translate changes lang in a way MutationObserver misses
     setInterval(updateDirByLang, 1000);
   </script>
+  <!-- Add Bootstrap JS for modal functionality -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
